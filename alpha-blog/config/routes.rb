@@ -4,7 +4,7 @@ Rails.application.routes.draw do
  root 'pages#home'
  get 'about', to: 'pages#about'
  
- # creates index and CRUD routes
+  # creates index and CRUD routes
  resources :articles
 
 end
