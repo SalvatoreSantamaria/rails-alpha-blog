@@ -6,6 +6,10 @@ class ArticlesController < ApplicationController
     # redirect_to article_path(@article)
    end
 
+  def edit
+    @article = Article.find(params[:id]) #find the article
+  end
+
    def show
     @article = Article.find(params[:id])
    end
@@ -22,6 +26,20 @@ class ArticlesController < ApplicationController
       render 'new'
     end
   end
+
+def update
+  @article = Article.find(params[:id]) #create article instance variable
+  if @article.update(article_params)
+    flash[:notice] = "Article was updated"
+    redirect_to article_path(@article)
+  else 
+    render 'edit'
+  end
+end
+
+
+
+
     private
       def article_params
       params.require(:article).permit(:title, :description)

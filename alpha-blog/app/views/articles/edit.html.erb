@@ -1,0 +1,26 @@
+<h1>Edit existing article</h1>
+
+<% if @article.errors.any? %>
+<h2>The following errors prevented article editing.</h2>
+  <ul>
+    <% @article.errors.full_messages.each do |msg| %> 
+    <li> <%= msg %> </li>
+    <%end%>
+  </ul>
+<%end%>
+
+<%= form_for @article do |variable_name| %>
+  <p>
+    <%= variable_name.label :title %><br/>
+    <%= variable_name.text_field :title %>
+  </p>
+  <p>
+    <%= variable_name.label :description %><br/>
+    <%= variable_name.text_area :description %>
+  </p>
+
+<p>
+  <%= variable_name.submit %>
+</p>
+
+<% end %>
