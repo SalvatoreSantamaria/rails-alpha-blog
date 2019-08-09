@@ -1,4 +1,9 @@
 class ArticlesController < ApplicationController
+
+  def index
+    @articles = Article.all #grab all articles from DB
+  end
+
   def new
     @article = Article.new
     # @article = Article.new(article_params)
