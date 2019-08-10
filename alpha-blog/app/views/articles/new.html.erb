@@ -1,31 +1,8 @@
 <h1>Create an article</h1>
 
-<% if @article.errors.any? %>
-<h2>The following errors prevented article creation.</h2>
-  <ul>
-    <% @article.errors.full_messages.each do |msg| %> 
-    <li> <%= msg %> </li>
-    <%end%>
-  </ul>
-<%end%>
-
-<%= form_for @article do |variable_name| %>
-  <p>
-    <%= variable_name.label :title %><br/>
-    <%= variable_name.text_field :title %>
-  </p>
-  <p>
-    <%= variable_name.label :description %><br/>
-    <%= variable_name.text_area :description %>
-  </p>
-
-<p>
-  <%= variable_name.submit %>
-</p>
-
-<% end %>
-
-<%= link_to "Back to articles listing", articles_path%>
+<%# if its in the same directory, we don't need to specify the folder. %>
+<%# if its in a shared directory, it should be <%= render 'shared/form' %> 
+<%= render 'form' %> 
 
 
 
