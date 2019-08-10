@@ -12,7 +12,11 @@
   </head>
 
   <body>
+  <%= render 'layouts/navigation' %>
     <%= render 'layouts/messages' %>
-    <%= yield %>
+    <div class="container">
+    <%= yield %> <%# all other views get served from here %>
+    </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
