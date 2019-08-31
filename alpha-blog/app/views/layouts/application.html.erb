@@ -18,5 +18,6 @@
     <%= yield %> <%# all other views get served from here %>
     </div>
     <%= render 'layouts/footer' %>
+    <%=debug(params) if Rails.env.development?%>
   </body>
 </html>
