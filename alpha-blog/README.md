@@ -131,3 +131,28 @@ add to views (with byebug only?)
 will show all params/model/view!!!!!!
 
 
+********************************************
+
+Added  debugger to UsersController
+
+ def create
+    debugger
+  end
+
+this is what it returned
+
+[1, 9] in C:/Users/sam/Desktop/Personal Projects/The Complete Ruby On Rails Developer Course/alpha-blog_app/alpha-blog/app/controllers/users_controller.rb
+   1: class UsersController < ApplicationController
+   2:   def new
+   3:     @user = User.new
+   4:   end
+   5:
+   6:   def create
+   7:     debugger
+=> 8:   end
+   9: end
+(byebug) params
+<ActionController::Parameters {"utf8"=>"✓", "authenticity_token"=>"DqHSS0FUebHXNMP0pdpcnSoaqdT/2eASxsXgwKJbiXiLCWTT0c1Gkmb4KSdnNeVvhTof2SbDwb1IcSloZ7SlXw==", "user"=>{"username"=>"Raven", "email"=>"raven@email.com", "password"=>"password"}, "commit"=>"Sign up", "controller"=>"users", "action"=>"create"} permitted: false>
+(byebug)
+
+
