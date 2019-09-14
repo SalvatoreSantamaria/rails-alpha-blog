@@ -4,7 +4,8 @@ class ArticlesController < ApplicationController
   #@article = Article.find(params[:id]) #create article instance variable
 
   def index
-    @articles = Article.all #grab all articles from DB
+    #@articles = Article.all #grab all articles from DB
+    @articles = Article.paginate(page: params[:page], per_page: 5)
   end
 
   def new

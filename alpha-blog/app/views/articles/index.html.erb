@@ -1,7 +1,14 @@
 <%=link_to "Home", root_path%> | 
 <%=link_to "About", about_path %>
 
-
+<h1 align="center">Listing all articles</h1>
+<div align="center">
+  <%= will_paginate %>
+</div>
 <%# copied %>
 <%= render 'article', obj: @articles %> <%#have to give partial path because it is in the same folder.%>
 <%# #this is saying for the article partial, use @articles as the value for obj in _article.html.erb  %>
+<h1 align="center">Listing all articles</h1>
+<div align="center">
+  <%= will_paginate %>
+</div>

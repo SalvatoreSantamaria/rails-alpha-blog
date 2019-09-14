@@ -6,6 +6,17 @@
   </div>
 </div>
 <h4 align= "center"><%= @user.username %>'s articles</h4>
+<div class="center">
+  <%# instance variable in users_controller show action %>
+  <%= will_paginate @user_articles%> 
+</div>
+<%# have to use this for pagination to work %>
+<%= render 'articles/article', obj: @user_articles%>
 
-<%= render 'articles/article', obj: @user.articles %> <%#have to give full path because it is in a different folder.%>
+<%# <%= render 'articles/article', obj: @user.articles %> <%#have to give full path because it is in a different folder.%>
 <%# #this is saying for the article partial, use @user.articles as the value for obj in _article.html.erb  %>
+
+<div class="center">
+  <%# instance variable in users_controller show action %>
+  <%= will_paginate @user_articles%> 
+</div>
