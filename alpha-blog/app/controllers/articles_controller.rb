@@ -1,7 +1,8 @@
 class ArticlesController < ApplicationController
 
   def index
-    @articles = Article.all #grab all articles from DB
+    # @articles = Article.all #grab all articles from DB
+    @articles = Article.paginate(page: params[:page], per_page: 5) #using the pagination gem. 
   end
 
   def new

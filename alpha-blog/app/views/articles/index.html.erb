@@ -4,6 +4,10 @@
 <h1>Listing all articles</h1>
 <%= link_to "Create new article", new_article_path %>
 
+<div align="center">
+  <%= will_paginate %>
+</div>
+
 <table>
   <tr>
   <th>Title</th>
@@ -11,7 +15,6 @@
   <th>Edit</th>
   <th>Show</th>
   </tr>
-
   <% @articles.each do |a| %>
   <tr>
     <td><%= a.title %></td>
@@ -21,6 +24,8 @@
     <td><%= link_to 'Delete', article_path(a), method: :delete, data: {confirm: "Are you sure"} %></td>
   </tr>
   <% end %>
-
-
 </table>
+
+<div align="center">
+  <%= will_paginate %>
+</div>
