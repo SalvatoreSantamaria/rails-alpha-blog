@@ -13,4 +13,8 @@ get 'signup', to: 'users#new'
 post 'users', to: 'users#create'
 # this is the other options (except because we already have users#new)
 resources :users, except: [:new]
+#request to controller 'session' action is 'new'
+get 'login', to: 'sessions#new'
+post 'login', to: 'sessions#create'
+delete 'logout', to: 'sessions#destroy'
 end
