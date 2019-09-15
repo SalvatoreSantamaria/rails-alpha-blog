@@ -71,8 +71,9 @@
 </form>
 
 <ul class="nav navbar-nav navbar-right">
-
-<li><a href="#">Link</a></li>
+  <li><%= link_to 'Login', login_path %></li> <%# need to finish this %>
+  <li><%= link_to 'Logout', logout_path, method: :delete %></li> <%# have to include delete method for logging out %>
+ 
 
 <li class="dropdown">
 
