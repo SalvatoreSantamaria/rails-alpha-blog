@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with :exception #Prevent CSRF attacks by raising an exception
+  protect_from_forgery with: :exception #Prevent CSRF attacks by raising an exception
   #methods created in application controller is available to ALL controllers, but are NOT available to views by default.
   #let rails know that these are helper methods
 
