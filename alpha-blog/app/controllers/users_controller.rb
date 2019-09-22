@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
-  
+  before_action :set_user, only: [:edit, :update, :show]
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+
   def index
     #@users = User.all
     @users = User.paginate(page: params[:page], per_page: 5)
@@ -22,11 +27,11 @@ class UsersController < ApplicationController
   end
 
   def edit 
-    @user = User.find(params[:id])
+   # @user = User.find(params[:id]) dont need because it's set above in before_action :set_user, only: [:edit, :update, :show] and in the set_user method
   end
 
   def update
-    @user = User.find(params[:id])
+   # @user = User.find(params[:id]) dont need because it's set above in before_action :set_user, only: [:edit, :update, :show] and in the set_user method
     if @user.update(user_params)#have whitelisted user name, email, password
       flash[:success] = "You have updated your account, #{@user.username}"
       redirect_to articles_path
@@ -36,7 +41,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id]) #grabbing in
+   # @user = User.find(params[:id]) #grabbing id #dont need because it's set above in before_action :set_user, only: [:edit, :update, :show] and in the set_user method
     @user_articles = @user.articles.paginate(page: params[:page], per_page: 5) #grabbing all the user articles using pagination
   end
 
