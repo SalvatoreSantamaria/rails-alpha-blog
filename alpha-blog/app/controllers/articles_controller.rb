@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
 
   before_action :set_article, only: [:edit, :update, :show, :destroy] #this is the method at the bottom, where we find the article via params[:id]. we are only allowing it on the below methods
   #@article = Article.find(params[:id]) #create article instance variable
-
+  before_action :require_user, except: [:index, :show] #except for index/show, I need a logged in user.
   def index
     #@articles = Article.all #grab all articles from DB
     @articles = Article.paginate(page: params[:page], per_page: 5)
